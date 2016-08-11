@@ -3,6 +3,7 @@ package com.javarush.test.level07.lesson12.home01;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 /* Вывести числа в обратном порядке
 Ввести с клавиатуры 10 чисел и заполнить ими список.
@@ -15,8 +16,20 @@ public class Solution
     public static void main(String[] args) throws IOException
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-
         //напишите тут ваш код
-        System.out.println("Hello");
+
+        ArrayList<String> list = new ArrayList<String>();
+        for (int i = 0; i < 10; i++)
+        {
+            String s = reader.readLine();
+            list.add(s);
+        }
+
+        //вывод содержимого коллекции на экран
+        for (int i = 0; i < list.size(); i++)
+        {
+            int j = list.size() - i - 1;
+            System.out.println( list.get(j) );
+        }
     }
 }
